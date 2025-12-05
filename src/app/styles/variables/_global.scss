@@ -1,0 +1,40 @@
+$font-family-main: Consolas, Monaco, "Courier New", Courier, monospace;
+
+$font-size-m: 16px;
+$font-line-m: 24px;
+$font-m: $font-size-m $font-family-main;
+
+$font-size-l: 24px;
+$font-line-l: 32px;
+$font-l: $font-size-l $font-family-main;
+
+// Цвета светлой темы
+$bg-color-light: #cce7e9;
+$primary-color-light: #05184f;
+$secondary-color-light: #3166d9;
+$red-light: #f00;
+
+// Цвета тёмной темы
+$bg-color-dark: #05282e;
+$primary-color-dark: #8b9036;
+$secondary-color-dark: #04fffb;
+$red-dark: #ce0505;
+
+// Размеры
+$navbar-height: 50px;
+$sidebar-width: 300px;
+$sidebar-width-collapsed: 80px;
+
+// z-index
+$modal-z-index: 10;
+
+// Colors
+$overlay-color: rgba(0 0 0 / 60%);
+
+:root {
+  --navbar-height: #{$navbar-height};
+  --sidebar-width: #{$sidebar-width};
+  --sidebar-width-collapsed: #{$sidebar-width-collapsed};
+  --modal-z-index: #{$modal-z-index};
+  --overlay-color: #{$overlay-color};
+}
