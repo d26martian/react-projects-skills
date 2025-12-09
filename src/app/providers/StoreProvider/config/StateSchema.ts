@@ -9,6 +9,7 @@ import {
     PayloadAction, EnhancedStore, Reducer, ReducersMapObject,
 } from '@reduxjs/toolkit';
 import { ProfileSchema } from 'entities/Profile';
+import { ArticleDetailsSchema } from 'entities/Article';
 
 export interface StateSchema {
     counter: CounterSchema;
@@ -17,6 +18,7 @@ export interface StateSchema {
     // Асинхронные редюсеры
     loginForm?: LoginSchema;
     profile?: ProfileSchema;
+    articleDetails?: ArticleDetailsSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;
