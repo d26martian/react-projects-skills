@@ -17,6 +17,8 @@ declare module '*.svg' {
 
 declare const __IS_DEV__: boolean;
 
+declare const __PROJECT__: 'storybook' | 'frontend' | 'jest';
+
 // declare module '*.module.scss' {
 //   const classes: { [key: string]: string };
 //   export default classes;

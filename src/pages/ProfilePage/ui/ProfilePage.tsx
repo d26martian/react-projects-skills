@@ -42,7 +42,7 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
   }
 
   useEffect(() => {
-    dispatch(fetchProfileData());
+    // dispatch(fetchProfileData());
   }, [dispatch]);
 
   const onChangeFirstname = useCallback((value: string) => {
