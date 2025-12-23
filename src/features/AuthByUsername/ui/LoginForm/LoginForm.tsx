@@ -36,7 +36,6 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
     const password = useSelector(getLoginPassword);
     const isLoading = useSelector(getLoginIsLoading);
     const error = useSelector(getLoginError);
-    const store = useStore() as ReduxStoreWithManager
 
     const onChangeUsername = useCallback((value: string) => {
         dispatch(loginActions.setUsername(value));
@@ -48,8 +47,8 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
 
     const onLoginClick = useCallback(async () => {
         const result = await dispatch(loginByUsername({ username, password }));
-        
-        if(result.meta.requestStatus === 'fulfilled') {
+
+        if (result.meta.requestStatus === 'fulfilled') {
             onSuccess()
         }
 
@@ -61,7 +60,7 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
             reducers={initialReducers}
         >
             <div className={classNames(cls.LoginForm, {}, [className])}>
-                <Text title={t('Форма авторизации')} />
+                {/* <Text title={t('Форма авторизации')} theme={TextTheme.PRIMARY} /> */}
                 {error && <Text text={t('Вы ввели неверный логин или пароль')} theme={TextTheme.ERROR} />}
                 <Input
                     autofocus

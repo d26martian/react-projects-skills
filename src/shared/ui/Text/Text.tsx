@@ -28,6 +28,7 @@ interface TextProps {
 }
 
 export const Text = memo((props: TextProps) => {
+
     const {
         className,
         text,
@@ -43,6 +44,7 @@ export const Text = memo((props: TextProps) => {
         [cls[size]]: true,
     };
 
+    console.log('-=--', mods);
     return (
         <div className={classNames(cls.Text, mods, [className])}>
             {title && <p className={cls.title}>{title}</p>}

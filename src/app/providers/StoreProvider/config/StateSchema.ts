@@ -7,9 +7,11 @@ import { UserSchema } from 'entities/User';
 import { LoginSchema } from 'features/AuthByUsername';
 import {
     PayloadAction, EnhancedStore, Reducer, ReducersMapObject,
+    createAsyncThunk,
 } from '@reduxjs/toolkit';
 import { ProfileSchema } from 'entities/Profile';
 import { ArticleDetailsSchema } from 'entities/Article';
+import { ArticleDetailsCommentsSchema } from 'pages/ArticleDetailsPage';
 
 export interface StateSchema {
     counter: CounterSchema;
@@ -19,6 +21,7 @@ export interface StateSchema {
     loginForm?: LoginSchema;
     profile?: ProfileSchema;
     articleDetails?: ArticleDetailsSchema;
+    articleDetailsComments?: ArticleDetailsCommentsSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;
@@ -44,3 +47,9 @@ export interface ThunkConfig<T> {
     extra: ThunkExtraArg;
     state: StateSchema;
 }
+
+export const createAppAsyncThunk = createAsyncThunk.withTypes<{
+    state: StateSchema;
+    extra: ThunkExtraArg;
+    rejectValue: string;
+}>();
